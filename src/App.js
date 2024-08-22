@@ -7,14 +7,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
     <div className='app-container'>
-      {/* <Nav /> */}
+      
       <Switch>
           <Route path="/news">
             News
@@ -28,8 +27,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/signup">
+            Signup
+          </Route>
           <Route path="/" exact>
-            Home
+          <Nav />
           </Route>
           <Route path="*">
             404 not found

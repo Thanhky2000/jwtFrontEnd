@@ -1,0 +1,49 @@
+.red {
+    border: 1px solid red;
+}
+
+.blue {
+    border: 1px solid blue;
+}
+.yellow {
+    border: 1px solid yellow;
+}
+
+.login-form {
+    border: 1px solid #333;
+    border-radius: 0.1rem;
+    .brand {
+        margin: 0 3rem;
+        display: flex;
+        flex-direction: column;
+        .brand-content {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            }
+            .brand-content-Login-OA {
+                border: none;
+                background-color: white;
+            }
+            .brand-content-password {
+                border: none;
+                background-color: white;
+            }
+         }
+    }
+}
+
+
+.bottom-content {
+    border: 1px solid #333;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    a {
+        text-decoration: none;
+    }
+}
