@@ -8,6 +8,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Signup from './components/signup/Signup';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/signup">
-            Signup
+           <Signup />
           </Route>
           <Route path="/" exact>
           <Nav />
