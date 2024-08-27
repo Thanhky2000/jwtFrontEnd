@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../signup/Signup.scss';
 import { NavLink, Link } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios'; 
+import { toast } from 'react-toastify';
 
 const Signup = (props) => {
     const [email, setEmail] = useState("");
@@ -11,10 +12,42 @@ const Signup = (props) => {
     const [confirmPassword, setConfirmPassword] = useState("");
 
 
+    const isValidate = () => {
+        if(!email) {
+            toast.error("Please enter your email");
+            return false;
+        }
+        let regX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regX.test(email)) {
+            toast.error("deo phai email");
+            return false;
+        }
+        if(!phone) {
+            toast.error("Please enter your phone");
+            return false;
+        }
+        if(!userName) {
+            toast.error("Please enter your username");
+            return false;
+        }
+        if(!password) {
+            toast.error("Please enter your password");
+            return false;
+        }
+        if(password != confirmPassword) {
+            toast.error("Your password is not the same");
+            return false;
+        }
+        return true;
+    }
     const handleRegister = () => {
+        let checkValidate = isValidate();
         let userData = {email, phone, userName, password}
         console.log("check userData >>> = : ", userData);
     }
+
+
+
     return (
         <div className='login-container mt-5'>
            <div className='container d-flex justify-content-center'>
@@ -43,7 +76,7 @@ const Signup = (props) => {
                     <input className='form-control' type='password' placeholder="Confirm Password"
                         value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)}
                     ></input>
-                   <button className='btn my-5 btn-blues'  type='submit' onClick={() => handleRegister()}>Register</button>
+                   <button className='btn my-5 btn-blues' onClick={() => handleRegister()}>Register</button>
                 </div>
                 </div>
             </div>
