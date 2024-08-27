@@ -1,5 +1,6 @@
 import React from 'react';
 import '../login/Login.scss';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Login = (props) => {
     return (
@@ -26,7 +27,7 @@ const Login = (props) => {
             </div>
             <div className='bottom-content mt-5'>
                     <span>Don't have an account? 
-                       <a href='signup'>Sign up</a>
+                    <NavLink to='/signup'>Login</NavLink>
                     </span>
             </div>
             </div>
